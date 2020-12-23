@@ -1,5 +1,6 @@
 const Router=require('express').Router();
 const{valiRegister,valiLogin,forgetpassword,Repassword} =require('../Validator/UsersValidator');
+ 
 const Controller =require('../Controller/User.Controller');
 const SanPhamController =require('../Controller/Sanpham.controller');
 exports.InitRouterUser=(app)=>{
@@ -21,11 +22,20 @@ exports.InitRouterUser=(app)=>{
     Router.post("/searchMulti",SanPhamController.SearchMulti);
   
     // add 
-    //Router.post("/addncc",SanPhamController.CreateNCC);
+    // Router.post("/addncc",SanPhamController.CreateNCC);
     //Router.post("/addgia",SanPhamController.AddMucGia);
      //Router.post("/addram",SanPhamController.AddRam);
     Router.post("/addbonho",SanPhamController.AddBoNho);
-   
+  
+    Router.post("/addsp",SanPhamController.AddSanPham);
+
+    // don hang
+     Router.post("/dathang",SanPhamController.reserver);
+     Router.post("/donhang",SanPhamController.getDonHang);
+     Router.post("/ctdonhang",SanPhamController.getCTDonHang);
+     Router.post("/infouser",SanPhamController.getInfoUser);
+      
+      
 
     // get All something
     Router.post("/sanpham",SanPhamController.GetAllSanPham);

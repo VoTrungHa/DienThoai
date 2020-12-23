@@ -5,6 +5,7 @@ const CTdonhang=new mongoose.Schema({
    sanpham:[
        {
            masp:{type:String,required:true},
+            
            tensp:{type:String,required:true},
            soluong:{type:Number,required:true},
            gia:{type:Number,required:true},
